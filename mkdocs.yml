@@ -1,0 +1,54 @@
+site_name: fpgmaas-cookiecutter-poetry-test-2
+repo_url: https://github.com/MohsenHNSJ/fpgmaas-cookiecutter-poetry-test-2
+site_url: https://MohsenHNSJ.github.io/fpgmaas-cookiecutter-poetry-test-2
+site_description: This is the seconds refined test for fpgmaas's cookiecutter
+site_author: Mohsen Hasan Nezhad
+edit_uri: edit/main/docs/
+repo_name: MohsenHNSJ/fpgmaas-cookiecutter-poetry-test-2
+copyright: Maintained by <a href="https://MohsenHNSJ.com">Florian</a>.
+
+nav:
+  - Home: index.md
+  - Modules: modules.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          setup_commands:
+            - import sys
+            - sys.path.append('../')
+theme:
+  name: material
+  feature:
+    tabs: true
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/MohsenHNSJ/fpgmaas-cookiecutter-poetry-test-2
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/fpgmaas-cookiecutter-poetry-test-2
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
