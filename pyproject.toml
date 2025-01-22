@@ -1,12 +1,15 @@
+[build-system]
+requires = ["poetry-core>=2.0.1"]
+build-backend = "poetry.core.masonry.api"
+
 [project]
 name = "fpgmaas_cookiecutter_poetry_test_2"
 version = "0.0.2"
 description = "This is the seconds refined test for fpgmaas's cookiecutter"
-authors = [{name = "Mohsen Hasan Nezhad", email = "mohsenhasannezhad@outlook.com"}]
-readme = "README.md"
-packages = [
-  {include = "fpgmaas_cookiecutter_poetry_test_2"}
+authors = [
+  { name = "Mohsen Hasan Nezhad", email = "mohsenhasannezhad@outlook.com" },
 ]
+readme = "README.md"
 
 [project.urls]
 Repository = "https://github.com/MohsenHNSJ/fpgmaas-cookiecutter-poetry-test-2"
@@ -25,11 +28,7 @@ tox = "^4.24.1"
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.6.1"
 mkdocs-material = "^9.5.50"
-mkdocstrings = {extras = ["python"], version = "^0.27.0"}
-
-[build-system]
-requires = ["poetry-core>=2.0.1"]
-build-backend = "poetry.core.masonry.api"
+mkdocstrings = { extras = ["python"], version = "^0.27.0" }
 
 [tool.mypy]
 files = ["fpgmaas_cookiecutter_poetry_test_2"]
@@ -42,7 +41,6 @@ warn_unused_ignores = "True"
 show_error_codes = "True"
 
 
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
@@ -51,47 +49,47 @@ target-version = "py313"
 line-length = 120
 fix = true
 select = [
-    # flake8-2020
-    "YTT",
-    # flake8-bandit
-    "S",
-    # flake8-bugbear
-    "B",
-    # flake8-builtins
-    "A",
-    # flake8-comprehensions
-    "C4",
-    # flake8-debugger
-    "T10",
-    # flake8-simplify
-    "SIM",
-    # isort
-    "I",
-    # mccabe
-    "C90",
-    # pycodestyle
-    "E", "W",
-    # pyflakes
-    "F",
-    # pygrep-hooks
-    "PGH",
-    # pyupgrade
-    "UP",
-    # ruff
-    "RUF",
-    # tryceratops
-    "TRY",
+  # flake8-2020
+  "YTT",
+  # flake8-bandit
+  "S",
+  # flake8-bugbear
+  "B",
+  # flake8-builtins
+  "A",
+  # flake8-comprehensions
+  "C4",
+  # flake8-debugger
+  "T10",
+  # flake8-simplify
+  "SIM",
+  # isort
+  "I",
+  # mccabe
+  "C90",
+  # pycodestyle
+  "E",
+  "W",
+  # pyflakes
+  "F",
+  # pygrep-hooks
+  "PGH",
+  # pyupgrade
+  "UP",
+  # ruff
+  "RUF",
+  # tryceratops
+  "TRY",
 ]
 ignore = [
-    # LineTooLong
-    "E501",
-    # DoNotAssignLambda
-    "E731",
+  # LineTooLong
+  "E501",
+  # DoNotAssignLambda
+  "E731",
 ]
 
 [tool.ruff.format]
 preview = true
-
 
 
 [tool.ruff.per-file-ignores]
