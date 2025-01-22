@@ -7,7 +7,7 @@ def main_func(to_return: str) -> str:
     Extended description of function.
 
     Args:
-        bar: Description of input argument.
+        to_return: Description of input argument.
 
     Returns:
         Description of return value
