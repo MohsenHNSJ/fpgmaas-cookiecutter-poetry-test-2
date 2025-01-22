@@ -1,4 +1,7 @@
-def foo(bar: str) -> str:
+"""Base module file"""
+
+
+def main_func(to_return: str) -> str:
     """Summary line.
 
     Extended description of function.
@@ -10,7 +13,7 @@ def foo(bar: str) -> str:
         Description of return value
     """
 
-    return bar
+    return to_return
 
 
 if __name__ == "__main__":  # pragma: no cover
