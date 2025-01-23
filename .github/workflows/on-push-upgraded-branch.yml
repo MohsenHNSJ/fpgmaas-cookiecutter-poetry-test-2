@@ -22,7 +22,7 @@ jobs:
           make build-and-test-publish
         env:
           TEST_PYPI_TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
-          RELEASE_VERSION: 0.5.0c1
+          RELEASE_VERSION: 0.5.0rc2
   deploy-docs:
     needs: publish
     runs-on: ubuntu-latest
