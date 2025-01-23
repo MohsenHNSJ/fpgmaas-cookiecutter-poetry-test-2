@@ -15,10 +15,6 @@ jobs:
       - name: Set up the environment
         uses: ./.github/actions/setup-poetry-env
 
-      - name: Export commit_hash
-        id: vars
-        run: echo commit_hash=$(git rev-parse --short "$GITHUB_SHA") >> $GITHUB_OUTPUT
-
       - name: Build and publish
         run: |
           source .venv/bin/activate
@@ -26,7 +22,7 @@ jobs:
           make build-and-test-publish
         env:
           TEST_PYPI_TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
-          RELEASE_VERSION: 0.5.0c${{ steps.vars.outputs.commit_hash }}
+          RELEASE_VERSION: 0.5.0c1
   deploy-docs:
     needs: publish
     runs-on: ubuntu-latest
