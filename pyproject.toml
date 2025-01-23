@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "fpgmaas_cookiecutter_poetry_test_2"
-version = "0.3.0"
+version = "0.5.0rc3"
 description = "This is the seconds refined test for fpgmaas's cookiecutter"
 authors = [
   { name = "Mohsen Hasan Nezhad", email = "mohsenhasannezhad@outlook.com" },
