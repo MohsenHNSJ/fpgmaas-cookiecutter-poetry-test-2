@@ -15,9 +15,9 @@ jobs:
       - name: Set up the environment
         uses: ./.github/actions/setup-poetry-env
 
-      - name: Export tag
+      - name: Export commit_hash
         id: vars
-        run: echo tag=${GITHUB_REF#refs/*/} >> $GITHUB_OUTPUT
+        run: echo commit_hash=$(git rev-parse --short "$GITHUB_SHA") >> $GITHUB_OUTPUT
 
       - name: Build and publish
         run: |
@@ -26,7 +26,7 @@ jobs:
           make build-and-test-publish
         env:
           TEST_PYPI_TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
-          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+          RELEASE_VERSION: ${{ steps.vars.outputs.commit_hash }}
   deploy-docs:
     needs: publish
     runs-on: ubuntu-latest
