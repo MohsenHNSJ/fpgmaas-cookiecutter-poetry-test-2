@@ -26,7 +26,7 @@ runs:
       shell: bash
 
     - name: Configure Poetry virtual environment in project
-      run: poetry config virtualenvs.in-project true -vv
+      run: poetry config virtualenvs.in-project true
       shell: bash
 
     - name: Load cached venv
@@ -38,5 +38,5 @@ runs:
 
     - name: Install dependencies
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --no-interaction -vv
+      run: poetry install --no-interaction
       shell: bash
