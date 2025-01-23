@@ -4,21 +4,28 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "fpgmaas_cookiecutter_poetry_test_2"
+version = "0.3.0"
 description = "This is the seconds refined test for fpgmaas's cookiecutter"
 authors = [
   { name = "Mohsen Hasan Nezhad", email = "mohsenhasannezhad@outlook.com" },
 ]
 readme = "README.md"
-dynamic = ["version", "dependencies"]
+dynamic = ["dependencies", "classifiers"]
 license = { text = "MIT" }
 requires-python = ">=3.9"
+keywords = ["test2", "MohsenHNSJ"]
 
 [project.urls]
-Repository = "https://github.com/MohsenHNSJ/fpgmaas-cookiecutter-poetry-test-2"
-Documentation = "https://MohsenHNSJ.github.io/fpgmaas-cookiecutter-poetry-test-2/"
+repository = "https://github.com/MohsenHNSJ/fpgmaas-cookiecutter-poetry-test-2"
+documentation = "https://MohsenHNSJ.github.io/fpgmaas-cookiecutter-poetry-test-2/"
+issues = "https://github.com/MohsenHNSJ/fpgmaas-cookiecutter-poetry-test-2/issues"
+
 
 [tool.poetry]
-version = "0.1.0" # Base version
+classifiers = [
+  "Topic :: Software Development :: Build Tools",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
