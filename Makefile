@@ -42,7 +42,7 @@ publish: ## publish a release to pypi.
 test-publish: ## Publish a release to test.pypi.
 	@echo "🚀 Test Publishing: Dry run."
 	@poetry config pypi-token.testpypi $(TEST_PYPI_TOKEN)
-	@poetry config repositories.testpypi https://test.pypi.org/legacy
+	@poetry config repositories.testpypi https://test.pypi.org/legacy/
 	@poetry publish --dry-run --repository testpypi
 	@echo "🚀 Test Publishing."
 	@poetry publish --repository testpypi
