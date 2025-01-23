@@ -1,31 +1,30 @@
 .PHONY: install
 install: ## Install the poetry environment and install the pre-commit hooks
 	@echo "🚀 Creating virtual environment using pyenv and poetry"
-	@poetry install
+	@poetry install -vv
 	@ poetry run pre-commit install
-	@poetry shell
+	@poetry shell -vv
 
 .PHONY: check
 check: ## Run code quality tools.
 	@echo "🚀 Checking Poetry lock file consistency with 'pyproject.toml': Running poetry check --lock"
-	@poetry check --lock --strict
-	@echo "🚀 Checking the "
+	@poetry check --lock --strict -vv
 	@echo "🚀 Linting code: Running pre-commit"
-	@poetry run pre-commit run -a
+	@poetry run pre-commit run -a -vv
 	@echo "🚀 Static type checking: Running mypy"
-	@poetry run mypy
+	@poetry run mypy -vv
 	@echo "🚀 Checking for obsolete dependencies: Running deptry"
-	@poetry run deptry .
+	@poetry run deptry . -vv
 
 .PHONY: test
 test: ## Test the code with pytest
 	@echo "🚀 Testing code: Running pytest"
-	@poetry run pytest --doctest-modules
+	@poetry run pytest --doctest-modules -vv
 
 .PHONY: build
 build: clean-build ## Build wheel file using poetry
 	@echo "🚀 Creating wheel file"
-	@poetry build
+	@poetry build -vv
 
 .PHONY: clean-build
 clean-build: ## clean build artifacts
@@ -34,21 +33,21 @@ clean-build: ## clean build artifacts
 .PHONY: publish
 publish: ## publish a release to pypi.
 	@echo "🚀 Publishing: Dry run."
-	@poetry config pypi-token.pypi $(PYPI_TOKEN)
-	@poetry publish --dry-run
+	@poetry config pypi-token.pypi $(PYPI_TOKEN) -vv
+	@poetry publish --dry-run -vv
 	@echo "🚀 Publishing."
-	@poetry publish
+	@poetry publish -vv
 
 .PHONY: build-and-publish
 build-and-publish: build publish ## Build and publish.
 
 .PHONY: docs-test
 docs-test: ## Test if documentation can be built without warnings or errors
-	@poetry run mkdocs build -s
+	@poetry run mkdocs build -s -vv
 
 .PHONY: docs
 docs: ## Build and serve the documentation
-	@poetry run mkdocs serve
+	@poetry run mkdocs serve -vv
 
 .PHONY: help
 help:
