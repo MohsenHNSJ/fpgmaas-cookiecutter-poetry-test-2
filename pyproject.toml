@@ -9,7 +9,7 @@ authors = [
   { name = "Mohsen Hasan Nezhad", email = "mohsenhasannezhad@outlook.com" },
 ]
 readme = "README.md"
-dynamic = [ "version" ]
+dynamic = ["version", "dependencies"]
 license = { text = "MIT" }
 requires-python = ">=3.9"
 
@@ -18,7 +18,7 @@ Repository = "https://github.com/MohsenHNSJ/fpgmaas-cookiecutter-poetry-test-2"
 Documentation = "https://MohsenHNSJ.github.io/fpgmaas-cookiecutter-poetry-test-2/"
 
 [tool.poetry]
-version = "0.1.0"  # Base version
+version = "0.1.0" # Base version
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
