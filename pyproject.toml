@@ -49,40 +49,59 @@ target-version = "py313"
 line-length = 120
 fix = true
 select = [
-  # flake8-2020
-  "YTT",
-  # flake8-bandit
-  "S",
-  # flake8-bugbear
-  "B",
   # flake8-builtins
   "A",
+  # flake8-bugbear
+  "B",
   # flake8-comprehensions
   "C4",
-  # flake8-debugger
-  "T10",
-  # flake8-simplify
-  "SIM",
-  # isort
-  "I",
   # mccabe
   "C90",
-  # pycodestyle
+  # flake8-date-time-zone
+  "DTZ",
+  # pycodestyle-errors
   "E",
-  "W",
+  # flake8-executable
+  "EXE",
   # pyflakes
   "F",
+  # isort
+  "I",
+  # flake8-gettext
+  "INT",
   # pygrep-hooks
   "PGH",
-  # pyupgrade
-  "UP",
-  # ruff
+  # flake8-pie
+  "PIE",
+  # pylint-convention
+  "PLC",
+  # pylint-errors
+  "PLE",
+  # flake8-pytest-style
+  "PT",
+  # flake8-use-pathlib
+  "PTH",
+  # flake8-raise
+  "RSE",
+  # ruff-specific rules
   "RUF",
+  # flake8-bandit
+  "S",
+  # flake8-simplify
+  "SIM",
+  # flake8-debugger
+  "T10",
   # tryceratops
   "TRY",
+  # pyupgrade
+  "UP",
+  # pycodestyle-warnings
+  "W",
+  # flake8-2020
+  "YTT",
 ]
 ignore = [
-  # LineTooLong
+  # pycodestyle line-too-long
   "E501",
   # DoNotAssignLambda
   "E731",
