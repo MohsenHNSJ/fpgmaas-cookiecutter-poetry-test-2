@@ -23,15 +23,3 @@ jobs:
         env:
           TEST_PYPI_TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
           RELEASE_VERSION: 0.5.0rc2
-  deploy-docs:
-    needs: publish
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out
-        uses: actions/checkout@v4
-
-      - name: Set up the environment
-        uses: ./.github/actions/setup-poetry-env
-
-      - name: Deploy documentation
-        run: poetry run mkdocs gh-deploy --force
