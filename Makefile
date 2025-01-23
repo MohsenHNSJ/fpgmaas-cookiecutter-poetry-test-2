@@ -38,8 +38,19 @@ publish: ## publish a release to pypi.
 	@echo "🚀 Publishing."
 	@poetry publish
 
+.PHONY: test-publish
+test-publish: ## Publish a release to test.pypi.
+	@echo "🚀 Test Publishing: Dry run."
+	@poetry config pypi-token.testpypi $(TEST_PYPI_TOKEN)
+	@poetry publish --dry-run
+	@echo "🚀 Test Publishing."
+	@poetry publish
+
 .PHONY: build-and-publish
 build-and-publish: build publish ## Build and publish.
+
+.PHONY: build-and-test-publish
+build-and-test-publish: build test-publish ## Build and publish to test.pypi
 
 .PHONY: docs-test
 docs-test: ## Test if documentation can be built without warnings or errors
