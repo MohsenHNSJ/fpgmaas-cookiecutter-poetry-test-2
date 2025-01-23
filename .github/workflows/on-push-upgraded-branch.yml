@@ -1,10 +1,9 @@
 name: release-upgraded-branch
 
 on:
-  release:
+  push:
     branches:
       - upgraded-branch
-    types: [published]
 
 jobs:
   publish:
