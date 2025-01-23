@@ -4,16 +4,19 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "fpgmaas_cookiecutter_poetry_test_2"
-version = "0.0.2"
 description = "This is the seconds refined test for fpgmaas's cookiecutter"
 authors = [
   { name = "Mohsen Hasan Nezhad", email = "mohsenhasannezhad@outlook.com" },
 ]
 readme = "README.md"
+dynamic = [ "version" ]
 
 [project.urls]
 Repository = "https://github.com/MohsenHNSJ/fpgmaas-cookiecutter-poetry-test-2"
 Documentation = "https://MohsenHNSJ.github.io/fpgmaas-cookiecutter-poetry-test-2/"
+
+[tool.poetry]
+version = "0.1.0"  # Base version
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
