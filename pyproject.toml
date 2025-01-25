@@ -4,16 +4,28 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "fpgmaas_cookiecutter_poetry_test_2"
-version = "0.0.2"
+version = "0.5.0rc3"
 description = "This is the seconds refined test for fpgmaas's cookiecutter"
 authors = [
   { name = "Mohsen Hasan Nezhad", email = "mohsenhasannezhad@outlook.com" },
 ]
 readme = "README.md"
+dynamic = ["dependencies", "classifiers"]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["test2", "MohsenHNSJ"]
 
 [project.urls]
-Repository = "https://github.com/MohsenHNSJ/fpgmaas-cookiecutter-poetry-test-2"
-Documentation = "https://MohsenHNSJ.github.io/fpgmaas-cookiecutter-poetry-test-2/"
+repository = "https://github.com/MohsenHNSJ/fpgmaas-cookiecutter-poetry-test-2"
+documentation = "https://MohsenHNSJ.github.io/fpgmaas-cookiecutter-poetry-test-2/"
+issues = "https://github.com/MohsenHNSJ/fpgmaas-cookiecutter-poetry-test-2/issues"
+
+
+[tool.poetry]
+classifiers = [
+  "Topic :: Software Development :: Build Tools",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
@@ -49,40 +61,59 @@ target-version = "py313"
 line-length = 120
 fix = true
 select = [
-  # flake8-2020
-  "YTT",
-  # flake8-bandit
-  "S",
-  # flake8-bugbear
-  "B",
   # flake8-builtins
   "A",
+  # flake8-bugbear
+  "B",
   # flake8-comprehensions
   "C4",
-  # flake8-debugger
-  "T10",
-  # flake8-simplify
-  "SIM",
-  # isort
-  "I",
   # mccabe
   "C90",
-  # pycodestyle
+  # flake8-date-time-zone
+  "DTZ",
+  # pycodestyle-errors
   "E",
-  "W",
+  # flake8-executable
+  "EXE",
   # pyflakes
   "F",
+  # isort
+  "I",
+  # flake8-gettext
+  "INT",
   # pygrep-hooks
   "PGH",
-  # pyupgrade
-  "UP",
-  # ruff
+  # flake8-pie
+  "PIE",
+  # pylint-convention
+  "PLC",
+  # pylint-errors
+  "PLE",
+  # flake8-pytest-style
+  "PT",
+  # flake8-use-pathlib
+  "PTH",
+  # flake8-raise
+  "RSE",
+  # ruff-specific rules
   "RUF",
+  # flake8-bandit
+  "S",
+  # flake8-simplify
+  "SIM",
+  # flake8-debugger
+  "T10",
   # tryceratops
   "TRY",
+  # pyupgrade
+  "UP",
+  # pycodestyle-warnings
+  "W",
+  # flake8-2020
+  "YTT",
 ]
 ignore = [
-  # LineTooLong
+  # pycodestyle line-too-long
   "E501",
   # DoNotAssignLambda
   "E731",

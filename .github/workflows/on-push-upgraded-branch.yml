@@ -1,0 +1,25 @@
+name: release-upgraded-branch
+
+on:
+  push:
+    branches:
+      - upgraded-branch
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up the environment
+        uses: ./.github/actions/setup-poetry-env
+
+      - name: Build and publish
+        run: |
+          source .venv/bin/activate
+          poetry version $RELEASE_VERSION
+          make build-and-test-publish
+        env:
+          TEST_PYPI_TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
+          RELEASE_VERSION: 0.5.0rc3
